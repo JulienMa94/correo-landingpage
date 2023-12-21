@@ -1,0 +1,38 @@
+---
+interface Props {
+	icon: string;
+    alt: string;
+	href: string;
+    width: string;
+    height: string;
+}
+
+const { icon, alt, width, height } = Astro.props;
+---
+
+<div class="mr-3">
+    <img src={icon} width={width} height={height} alt={alt}/>
+</div>
+
+<style>
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: 0.3rem;
+        background-color: rgb(245, 245, 245);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+
+    div:hover {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    img {
+        display: block;
+    }
+</style>
