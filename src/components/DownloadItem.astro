@@ -9,12 +9,11 @@ const {iconClass, alt, href} = Astro.props;
 ---
 
 <a class="mr-3" href={href} target="_self" rel="noopener noreferrer">
-    <i class={`${iconClass} text-3xl`}  alt={alt}/>
+    <i class={`${iconClass} text-3xl`} title={alt}/>
 </a>
 
-
 <style>
-    div {
+    a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,7 +24,7 @@ const {iconClass, alt, href} = Astro.props;
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
     }
 
-    div:hover {
+    a:hover {
         background-color: rgb(255, 255, 255);
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
         cursor: pointer;
