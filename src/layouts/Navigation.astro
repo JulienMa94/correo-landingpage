@@ -20,41 +20,43 @@ import NavigationLink from "../components/NavigationLink.astro";
     }
   </script>
 
-<nav class="flex items-center justify-between lg:justify-normal pl-2 pr-2 pb-2 pt-2 w-full h-fit shadow-md">
-    <div class="flex items-center">
-        <img src="correo_logo.svg" width="48" height="48">
-        <h5 class="ml-2 text-xl font-medium">
-            CorreoMQTT
-        </h5>
-    </div>
-
-    <div class="lg:grow">
-        <span class="lg:hidden mr-2" id="menu">
-            <i class="fa-solid fa-bars text-xl"></i>
-        </span>
-
-        <div class="hidden lg:block">
-            <NavigationLink text="Features" href="#feature_section" />
-            <NavigationLink text="Documentation" href="https://github.com/EXXETA/correomqtt/wiki" />
-            <NavigationLink text="Contributing" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" />
-            <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" />
+<nav>
+    <div class="flex items-center justify-between lg:justify-normal pl-2 pr-2 pb-2 pt-2 w-full h-fit shadow-md">
+        <div class="flex items-center">
+            <img src="correo_logo.svg" width="48" height="48">
+            <h5 class="ml-2 text-xl font-medium">
+                CorreoMQTT
+            </h5>
         </div>
-    </div>
-
-    <div class="hidden lg:block">
-        <DownloadButton/>
-    </div>
     
-    <a class="hidden lg:block" href="https://github.com/EXXETA/correomqtt" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-github text-3xl"></i>
-    </a>
+        <div class="lg:grow">
+            <span class="lg:hidden mr-2" id="menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </span>
+    
+            <div class="hidden lg:block">
+                <NavigationLink text="Features" href="#feature_section" />
+                <NavigationLink text="Documentation" href="https://github.com/EXXETA/correomqtt/wiki" />
+                <NavigationLink text="Contributing" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" />
+                <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" />
+            </div>
+        </div>
+    
+        <div class="hidden lg:block">
+            <DownloadButton/>
+        </div>
+        
+        <a class="hidden lg:block" href="https://github.com/EXXETA/correomqtt" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github text-3xl"></i>
+        </a>
+    </div>
+    <div class="navmenu flex flex-col leading-relaxed bg-tertiary">
+        <NavigationLink text="Features" href="#feature_section" />
+        <NavigationLink text="Documentation" href="https://github.com/EXXETA/correomqtt/wiki" />
+        <NavigationLink text="Contributing" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" />
+        <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" />
+    </div>
 </nav>
-<div class="navmenu flex flex-col leading-relaxed bg-tertiary">
-    <NavigationLink text="Features" href="#feature_section" />
-    <NavigationLink text="Documentation" href="https://github.com/EXXETA/correomqtt/wiki" />
-    <NavigationLink text="Contributing" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" />
-    <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" />
-</div>
 
 <style>
     nav {
@@ -63,16 +65,17 @@ import NavigationLink from "../components/NavigationLink.astro";
         background: white;
     }
     .navmenu {
-        overflow: hidden;
         max-height: 0;
+        padding: 0;
+        overflow: hidden;
         border-bottom: 1px solid rgb(209 213 219);
-        transition-delay: 1s;
-        transition: max-height 0.5s ease-out;
+        transition: transform 250ms ease-in-out;
+        transform: scaleY(0);
+        transform-origin: top;
     }
     .navmenu-toggle {
-        max-height: 500px;
+        max-height: 100vh;
         padding: 0.5rem 0;
-        transition-delay: 1s;
-        transition: max-height 0.5s ease-in;
+        transform: scaleY(1);
     }
 </style>
