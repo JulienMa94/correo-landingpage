@@ -4,32 +4,32 @@ import Card from '../components/Card.astro';
 <section id="feature_section"></section>
 <div class="mt-4">
     <h1 class="text-3xl mb-4">Features</h1>
-<ul role="list" class="link-card-grid">
+<ul role="list" class="card-grid">
     <Card
-        href="https://docs.astro.build/"
         title="MQTT Publish / Subscribe"
         body="Send & receive MQTT messages via topics."
+        iconClass='fa-regular fa-comments'
     />
     <Card
-        href="https://astro.build/integrations/"
         title="Multiple Connections"
         body="Connect to multiple MQTT brokers at once."
+        iconClass='fa-solid fa-arrow-up-wide-short'
     />
     <Card
-        href="https://astro.build/themes/"
         title="Plugins"
         body="Explore the community plugin marketplace or write your own custom plugins."
+        iconClass='fa-solid fa-puzzle-piece'
     />
     <Card
-        href="https://astro.build/chat/"
         title="Themes"
         body="Change the look of your favourite MQTT Gui client with custom themes"
+        iconClass='fa-solid fa-palette'
     />
 </ul>
 </div>
 
 <style>
-    .link-card-grid {
+    .card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
