@@ -1,17 +1,15 @@
 ---
 interface Props {
-	icon: string;
+	iconClass: string;
     alt: string;
 	href: string;
-    width: string;
-    height: string;
 }
 
-const { icon, alt, width, height } = Astro.props;
+const {iconClass, alt} = Astro.props;
 ---
 
 <div class="mr-3">
-    <img src={icon} width={width} height={height} alt={alt}/>
+    <i class={`${iconClass} text-3xl`}  alt={alt}/>
 </div>
 
 <style>
