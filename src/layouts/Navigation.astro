@@ -4,27 +4,34 @@ import NavigationLink from "../components/NavigationLink.astro";
 
 ---
 
-<!--
-    q: Generate me html for an a tag with a link github.com
-    a: <a href="github.com">github.com</a>
-
- -->
-
-<nav class="flex items-center pl-2 pr-2 pb-2 pt-2 w-full h-fit shadow-md">
-    <img src="Icon_48x48.png">
-    <h5 class="ml-2 text-xl font-medium">
-        CorreoMQTT
-    </h5>
-    <div class="ml-4 flex grow">
-        <NavigationLink text="Features" href="#" />
-        <NavigationLink text="Documentation" href="#" />
-        <NavigationLink text="Articles" href="#" />
-        <NavigationLink text="Contributing" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" />
-        <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" />
+<nav class="flex items-center justify-between lg:justify-normal pl-2 pr-2 pb-2 pt-2 w-full h-fit shadow-md">
+    <div class="flex items-center">
+        <img src="Icon_48x48.png">
+        <h5 class="ml-2 text-xl font-medium">
+            CorreoMQTT
+        </h5>
     </div>
-    <DownloadButton />
-    <a href="https://github.com/EXXETA/correomqtt" target="_blank" rel="noopener noreferrer">
-        <img src="github_icon.png" width="32" height="32">
+
+    <div class="lg:grow">
+        <span class="lg:hidden">
+            <i class="fa-solid fa-bars"></i>
+        </span>
+
+        <div class="hidden lg:block">
+            <NavigationLink text="Features" href="#" />
+            <NavigationLink text="Documentation" href="#" />
+            <NavigationLink text="Articles" href="#" />
+            <NavigationLink text="Contributing" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" />
+            <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" />
+        </div>
+    </div>
+
+    <div class="hidden lg:block">
+        <DownloadButton/>
+    </div>
+    
+    <a class="hidden lg:block" href="https://github.com/EXXETA/correomqtt" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-github "></i>
     </a>
 </nav>
 
