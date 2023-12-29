@@ -4,28 +4,12 @@ import Welcome from '../layouts/Welcome.astro';
 ---
 
 <!--Main Content -->
-<main>
+<main class="m-auto p-4 text-xl leading-relaxed w-9/12 lg:w-8/12 2xl:w-6/12">
     <!-- Landing page section -->
     <Welcome/>
 
-    <hr class="text-dark"/>
+    <hr class="text-dark my-16 opacity-50"/>
 
     <!-- Correo Features -->
     <Features/>
 </main>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 60%;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-
-	hr {
-		margin: 4rem 0;
-		color: rgba(0, 0, 0, 0.3);
-	}
-</style>
