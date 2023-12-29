@@ -5,12 +5,13 @@ interface Props {
 	href: string;
 }
 
-const {iconClass, alt} = Astro.props;
+const {iconClass, alt, href} = Astro.props;
 ---
 
-<div class="mr-3">
+<a class="mr-3" href={href} target="_self" rel="noopener noreferrer">
     <i class={`${iconClass} text-3xl`}  alt={alt}/>
-</div>
+</a>
+
 
 <style>
     div {
