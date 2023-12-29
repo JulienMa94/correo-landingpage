@@ -4,6 +4,22 @@ import NavigationLink from "../components/NavigationLink.astro";
 
 ---
 
+<script>
+    const menuButton = document.getElementById("menu");
+    
+    if (menuButton) {
+        menuButton.addEventListener("click", () => {
+        [...document.querySelectorAll(".navmenu")].forEach((Element) => {
+            if (Element.classList.contains("navmenu-toggle")) {
+                Element.classList.remove("navmenu-toggle");
+            } else {
+                Element.classList.add("navmenu-toggle");
+            }
+        });
+    });
+    }
+  </script>
+
 <nav class="flex items-center justify-between lg:justify-normal pl-2 pr-2 pb-2 pt-2 w-full h-fit shadow-md">
     <div class="flex items-center">
         <img src="correo_logo.svg" width="48" height="48">
@@ -13,8 +29,8 @@ import NavigationLink from "../components/NavigationLink.astro";
     </div>
 
     <div class="lg:grow">
-        <span class="lg:hidden">
-            <i class="fa-solid fa-bars"></i>
+        <span class="lg:hidden mr-2" id="menu">
+            <i class="fa-solid fa-bars text-xl"></i>
         </span>
 
         <div class="hidden lg:block">
@@ -33,11 +49,30 @@ import NavigationLink from "../components/NavigationLink.astro";
         <i class="fa-brands fa-github text-3xl"></i>
     </a>
 </nav>
+<div class="navmenu flex flex-col leading-relaxed bg-tertiary">
+    <NavigationLink text="Features" href="#feature_section" />
+    <NavigationLink text="Documentation" href="https://github.com/EXXETA/correomqtt/wiki" />
+    <NavigationLink text="Contributing" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" />
+    <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" />
+</div>
 
 <style>
     nav {
         position: sticky;
         top: 0;
         background: white;
+    }
+    .navmenu {
+        overflow: hidden;
+        max-height: 0;
+        border-bottom: 1px solid rgb(209 213 219);
+        transition-delay: 1s;
+        transition: max-height 0.5s ease-out;
+    }
+    .navmenu-toggle {
+        max-height: 500px;
+        padding: 0.5rem 0;
+        transition-delay: 1s;
+        transition: max-height 0.5s ease-in;
     }
 </style>

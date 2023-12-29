@@ -8,6 +8,7 @@ export default {
       'transparent': 'transparent',
       'primary': '#c0cc19',
       'secondary': '#4a5568',
+      'tertiary': 'rgb(243 244 246)',
     },
     container: {
       padding: '1rem',
