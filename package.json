@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && npm run build-css && astro build",
-    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "build": "astro check && astro build && npm run build-css",
+    "build-css": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
     "preview": "astro preview",
     "astro": "astro"
   },
