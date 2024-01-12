@@ -1,0 +1,65 @@
+---
+    import { correo_contributing_link } from "../accessibility";
+    import SectionHeadLine from "../components/SectionHeadline.astro";
+
+    type Contributor = {
+            avatar_url: string,
+            login: string,
+            html_url: string
+    }
+
+    let contributors: Array<Contributor> = [];
+    const response: Response = await fetch('https://api.github.com/repos/EXXETA/correomqtt/contributors');
+    
+    if (response.status === 200) {
+        contributors = await response.json();
+    } else {
+        console.log("Error while fetching contributors. Response status: " + response.status + "");
+    }
+---
+
+<section id="contributing_section">
+    <SectionHeadLine title="Contributing" />
+   
+    <div class="flex flex-col card text-md bg-primary pl-4 pr-4 pb-3 pt-3 sm:flex-row">
+        <p class="grow text-medium mb-4 sm:mb-1">
+            Interessed in contributing to CorreoMQTT? <br/>
+            <b class="bold text-2xl text-white">Awesome!</b> We are always looking for new contributors.
+        </p>
+        
+        <a class="flex flex-col justify-center items-center text-white" href="https://github.com/EXXETA/correomqtt/blob/develop/CONTRIBUTING.md" target="_blank" aria-label={correo_contributing_link}>
+            <i class="fa-regular fa-file-lines text-4xl mb-1"></i>
+            <p class="text-sm">Guidelines</p>
+        </a>
+    </div>
+    
+    <div class="flex flex-col mt-6 w-full md:flex-row max-w-7">
+        <h3 class="text-md font-bold mb-4 mt-4 md:mr-3 md:w-2/6 2xl:w-1/7">
+            CorreoMQTT is made possible by the work of our contributors.
+        </h3>
+        <div class="flex flex-wrap grow md:items-center md:w-4/6 2xl:w-6/7">
+            {contributors.map(contributor => {
+                return (
+                    <span class="flex items-center mr-1 mb-1">
+                        <a target="_blank" aria-label={`${contributor.login} Avatar. Follow link to Github profile.`} href={contributor.html_url}>
+                            <img src={contributor.avatar_url} alt={contributor.login} class="w-6 h-6 rounded-full" />
+                        </a>
+                    </span>
+                )
+            })}
+        </div>
+    </div>
+
+</section>
+
+<style>
+    .card {
+		width: 100%;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 7px;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+	}
+</style>

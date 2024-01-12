@@ -1,32 +1,34 @@
 ---
 import Card from '../components/Card.astro';
+import SectionHeadLine from '../components/SectionHeadline.astro';
 ---
-<section id="feature_section"></section>
-<div class="mt-4">
-    <h1 class="text-3xl mb-4">Features</h1>
-<ul role="list" class="card-grid">
-    <Card
-        title="MQTT Publish / Subscribe"
-        body="Send & receive MQTT messages via topics."
-        iconClass='fa-regular fa-comments'
-    />
-    <Card
-        title="Multiple Connections"
-        body="Connect to multiple MQTT brokers at once."
-        iconClass='fa-solid fa-arrow-up-wide-short'
-    />
-    <Card
-        title="Plugins"
-        body="Explore the community plugin marketplace or write your own custom plugins."
-        iconClass='fa-solid fa-puzzle-piece'
-    />
-    <Card
-        title="Themes"
-        body="Change the look of your favourite MQTT Gui client with custom themes"
-        iconClass='fa-solid fa-palette'
-    />
-</ul>
-</div>
+<section id="feature_section">
+    <div class="mt-4 mb-4">
+        <SectionHeadLine title="Features" />
+        <ul role="list" class="card-grid">
+            <Card
+                title="MQTT Publish / Subscribe"
+                body="Send & receive MQTT messages via topics."
+                iconClass='fa-regular fa-comments'
+            />
+            <Card
+                title="Multiple Connections"
+                body="Connect to multiple MQTT brokers at once."
+                iconClass='fa-solid fa-arrow-up-wide-short'
+            />
+            <Card
+                title="Plugins"
+                body="Explore the community plugin marketplace or write your own custom plugins."
+                iconClass='fa-solid fa-puzzle-piece'
+            />
+            <Card
+                title="Themes"
+                body="Change the look of your favourite MQTT Gui client with custom themes"
+                iconClass='fa-solid fa-palette'
+            />
+        </ul>
+    </div>
+</section>
 
 <style>
     .card-grid {

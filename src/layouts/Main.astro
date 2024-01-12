@@ -1,6 +1,8 @@
 ---
 import Features from '../layouts/Features.astro';
 import Welcome from '../layouts/Welcome.astro';
+import Contributing from '../layouts/Contributing.astro';
+import HorizontalLine from '../components/HorizontalLine.astro';
 ---
 
 <!--Main Content -->
@@ -10,10 +12,16 @@ import Welcome from '../layouts/Welcome.astro';
 		<Welcome/>
 	</div>
 
-	<hr class="w-12/12 mt-5 mb-6 ml-auto mr-auto opacity-40"/>
+	<HorizontalLine/>
 
     <!-- Correo Features -->
     <div class="w-11/12 m-auto">
 		<Features/>
+	</div>
+
+	<HorizontalLine/>
+
+	<div class="w-11/12 m-auto">
+		<Contributing/>
 	</div>
 </main>
