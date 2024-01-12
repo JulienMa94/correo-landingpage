@@ -10,14 +10,25 @@ import NavigationLink from "../components/NavigationLink.astro";
     
     if (menuButton) {
         menuButton.addEventListener("click", () => {
-        [...document.querySelectorAll(".navmenu")].forEach((Element) => {
-            if (Element.classList.contains("navmenu-toggle")) {
-                Element.classList.remove("navmenu-toggle");
-            } else {
-                Element.classList.add("navmenu-toggle");
-            }
+            [...document.querySelectorAll(".navmenu")].forEach((Element) => {
+                if (Element.classList.contains("navmenu-toggle")) {
+                    Element.classList.remove("navmenu-toggle");
+                } else {
+                    Element.classList.add("navmenu-toggle");
+                }
+            });
         });
-    });
+
+        window.addEventListener("resize", () => {
+            console.log("Resize event")
+            if (document.documentElement.clientWidth >= 1024) {
+                [...document.querySelectorAll(".navmenu")].forEach((Element) => {
+                    if (Element.classList.contains("navmenu-toggle")) {
+                        Element.classList.remove("navmenu-toggle");
+                    }
+                });
+            }
+        })
     }
   </script>
 
