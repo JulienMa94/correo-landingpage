@@ -1,0 +1,57 @@
+---
+import NavigationLink from "../../components/NavigationLink.astro";
+import { correo_contributing_link, correo_documentation_link, correo_feature_link, correo_plugin_link, correo_download_link, correo_github_link } from '../../accessibility';
+---
+
+<script>
+    const menuButton = document.getElementById("menu");
+    
+    if (menuButton) {
+        menuButton.addEventListener("click", () => {
+            [...document.querySelectorAll(".navmenu")].forEach((Element) => {
+                if (Element.classList.contains("navmenu-toggle")) {
+                    Element.classList.remove("navmenu-toggle");
+                } else {
+                    Element.classList.add("navmenu-toggle");
+                }
+            });
+        });
+
+        window.addEventListener("resize", () => {
+            console.log("Resize event")
+            if (document.documentElement.clientWidth >= 1024) {
+                [...document.querySelectorAll(".navmenu")].forEach((Element) => {
+                    if (Element.classList.contains("navmenu-toggle")) {
+                        Element.classList.remove("navmenu-toggle");
+                    }
+                });
+            }
+        })
+    }
+  </script>
+
+<div class="navmenu flex flex-col leading-relaxed bg-tertiary">
+    <NavigationLink text="Features" href="#feature_section" ariaLabel={correo_feature_link} />
+    <NavigationLink text="Documentation" href="https://github.com/EXXETA/correomqtt/wiki" ariaLabel={correo_contributing_link} />
+    <NavigationLink text="Contributing" href="#contributing_section" ariaLabel={correo_contributing_link} />
+    <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" ariaLabel={correo_plugin_link}/>
+    <NavigationLink text="Download" href="https://github.com/EXXETA/correomqtt/releases/latest" target="_blank" ariaLabel={correo_download_link} />
+    <NavigationLink text="Github" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" ariaLabel={correo_github_link} />
+</div>
+
+<style>
+    .navmenu {
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        border-bottom: 1px solid rgb(209 213 219);
+        transition: transform 250ms ease-in-out;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    .navmenu-toggle {
+        max-height: 100vh;
+        padding: 0.5rem 0;
+        transform: scaleY(1);
+    }
+</style>

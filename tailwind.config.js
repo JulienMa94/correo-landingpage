@@ -10,9 +10,6 @@ export default {
       'secondary': '#4a5568',
       'tertiary': 'rgb(243 244 246)',
     },
-    container: {
-      padding: '1rem',
-    },
     spacing: {
       '1': '8px',
       '2': '12px',
@@ -21,9 +18,9 @@ export default {
       '5': '32px',
       '6': '48px',
       '16': '64px',
-      '36': '144px'
+      '36': '144px',
+      '40': '156px'
     },
-
     extend: {},
   },
   plugins: [],

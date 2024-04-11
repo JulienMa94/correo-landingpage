@@ -3,25 +3,27 @@ import Features from '../layouts/Features.astro';
 import Welcome from '../layouts/Welcome.astro';
 import Contributing from '../layouts/Contributing.astro';
 import HorizontalLine from '../components/HorizontalLine.astro';
+import ContentLayout from '../layouts/ContentLayout.astro';
+import BackgroundImage from '../assets/BackgroundImage.astro';
 ---
 
 <!--Main Content -->
-<main class="m-auto p-5 text-lg leading-relaxed w-12/12 sm:w-9/12 sm:text-xl sm:p-4 sm:mt-4 2xl:w-8/12">
-    <!-- Landing page section -->
-    <div class="w-11/12 m-auto">
+<main>
+	<BackgroundImage/>
+    <ContentLayout>
+		<!-- Landing page section -->
 		<Welcome/>
-	</div>
-
-	<HorizontalLine/>
-
-    <!-- Correo Features -->
-    <div class="w-11/12 m-auto">
-		<Features/>
-	</div>
-
-	<HorizontalLine/>
-
-	<div class="w-11/12 m-auto">
+		<!-- Correo Features -->
+		<div class="feature-section">
+			<Features/>
+		</div>
+		<!-- Correo Contribution -->
 		<Contributing/>
-	</div>
+	</ContentLayout>
 </main>
+
+<style>
+	.feature-section {
+		background-color: white;
+	}
+</style>

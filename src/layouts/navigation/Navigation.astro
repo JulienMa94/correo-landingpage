@@ -1,0 +1,31 @@
+---
+import ContentLayout from '../ContentLayout.astro';
+import Logo from './Logo.astro';
+import MobileLinks from './MobileLinks.astro';
+import Links from './Links.astro';
+---
+
+<nav>
+    <div class="w-full h-fit">
+        <ContentLayout>
+            <div class="flex items-center justify-between pl-2 pr-2 pb-2 pt-2">
+                <Logo />
+            
+                <Links/>
+            </div>
+        </ContentLayout>
+    </div>
+
+    <MobileLinks />
+</nav>
+
+<style>
+    nav {
+        position: sticky;
+        top: 0;
+        background: #222222;
+        box-shadow: 0px 4px 8px 0px #0000001A;
+        color: white;
+        z-index: 100;
+    }
+</style>

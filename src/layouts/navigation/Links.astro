@@ -1,0 +1,27 @@
+---
+import GithubIcon from '../../assets/GithubIcon.astro';
+import DownloadButton from "../../components/DownloadButton.astro";
+import NavigationLink from "../../components/NavigationLink.astro";
+import { correo_contributing_link, correo_documentation_link, correo_feature_link, correo_plugin_link, correo_download_link, correo_github_link } from '../../accessibility';
+---
+
+<div class="flex items-center">
+    <span class="lg:hidden mr-2" id="menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+    </span>
+
+    <div class="hidden lg:block">
+        <NavigationLink text="Features" href="#feature_section" ariaLabel={correo_feature_link} />
+        <NavigationLink text="Documentation" href="https://github.com/EXXETA/correomqtt/wiki" target="_blank" ariaLabel={correo_documentation_link}/>
+        <NavigationLink text="Contributing" href="#contributing_section" ariaLabel={correo_contributing_link}/>
+        <NavigationLink text="Plugins" href="https://github.com/EXXETA/correomqtt-plugins" target="_blank" ariaLabel={correo_plugin_link} />
+    </div>
+
+    <div class="hidden lg:block">
+        <DownloadButton/>
+    </div>
+    
+    <a class="hidden lg:block" href="https://github.com/EXXETA/correomqtt" target="_blank" aria-label="Read more about the Correo Source Code" rel="noopener noreferrer">
+        <GithubIcon/>
+    </a>
+</div>
