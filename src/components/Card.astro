@@ -8,16 +8,34 @@ interface Props {
 const {title, body,iconClass } = Astro.props;
 ---
 
-<li class="flex flex-col list-none p-1 min-h-36 min-w-36 max-w-full">
-	<span class="flex items-center mb-2 h-2/6">
-		<span class="h-full">
-			<i class={`${iconClass} text-3xl`} title={title}/>
-		</span>
-		<h2 class="font-bold ml-2">
+<li class="flex flex-col list-none p-1 min-h-36 min-w-36 max-w-full card">
+	<div class="flex flex-col items-start mb-3 h-2/6">
+		<div class="h-full mb-1">
+			<i class={`${iconClass} card-icon text-3xl`} title={title}/>
+		</div>
+		<h2 class="font-bold">
 			{title}
 		</h2>
-	</span>
+	</div>
 	<p class="text-base h-4/6">
 		{body}
 	</p>
 </li>
+
+<style>
+	.card-icon {
+		color: #C0CC19
+	}
+	.card {
+		border-radius: 10px;
+		border: 1px solid #2222223D;
+		background: #FFF;
+		box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.16);
+		width: 264px;
+		height: 192px;
+		padding: 16px
+	}
+	li:hover {
+
+	}
+</style>

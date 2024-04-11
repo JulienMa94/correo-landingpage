@@ -2,9 +2,11 @@
 import Card from '../components/Card.astro';
 import SectionHeadLine from '../components/SectionHeadline.astro';
 ---
-<section id="feature_section">
-    <div class="mt-4 mb-4">
-        <SectionHeadLine title="Features" />
+<section id="feature_section" class="feature-section">
+    <div>
+        <div class="mb-6">
+            <SectionHeadLine title="CorreoMQTT Features" />
+        </div>
         <ul role="list" class="card-grid">
             <Card
                 title="MQTT Publish / Subscribe"
@@ -37,4 +39,8 @@ import SectionHeadLine from '../components/SectionHeadline.astro';
 		gap: 2rem;
 		padding: 0;
 	}
+
+    .feature-section {
+        padding-top: 80px
+    }
 </style>
