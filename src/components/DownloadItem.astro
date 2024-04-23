@@ -8,7 +8,7 @@ interface Props {
 const {iconClass, alt, href} = Astro.props;
 ---
 
-<a class="mr-3" href={href} target="_self" rel="noopener noreferrer">
+<a class="mr-3 bg-primary" href={href} target="_self" rel="noopener noreferrer">
     <i class={`${iconClass} text-3xl`} title={alt}/>
 </a>
 
@@ -20,14 +20,11 @@ const {iconClass, alt, href} = Astro.props;
         width: 48px;
         height: 48px;
         border-radius: 0.3rem;
-        color: white;
-        border: 1px solid #FFFFFF;
-        background: #222222;
+        color: #222222;
         box-shadow: 0 4px 8px 0 #00000033;
     }
 
     a:hover {
-        background-color: #5a5a5a;
         box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
         cursor: pointer;
     }

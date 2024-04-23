@@ -1,36 +1,39 @@
 ---
 import Card from '../components/Card.astro';
 import SectionHeadLine from '../components/SectionHeadline.astro';
+import ContentLayout from "./ContentLayout.astro";
 ---
-<section id="feature_section" class="feature-section">
-    <div>
-        <div class="mb-6">
-            <SectionHeadLine title="CorreoMQTT Features" />
+<ContentLayout>
+    <section id="feature_section" class="feature-section">
+        <div>
+            <div class="mb-6">
+                <SectionHeadLine title="CorreoMQTT Features" />
+            </div>
+            <ul role="list" class="card-grid">
+                <Card
+                        title="MQTT Publish / Subscribe"
+                        body="Send & receive MQTT messages via topics."
+                        iconClass='fa-regular fa-comments'
+                />
+                <Card
+                        title="Multiple Connections"
+                        body="Connect to multiple MQTT brokers at once."
+                        iconClass='fa-solid fa-arrow-up-wide-short'
+                />
+                <Card
+                        title="Plugins"
+                        body="Explore the community plugin marketplace or write your own custom plugins."
+                        iconClass='fa-solid fa-puzzle-piece'
+                />
+                <Card
+                        title="Themes"
+                        body="Change the look of your favourite MQTT Gui client with custom themes"
+                        iconClass='fa-solid fa-palette'
+                />
+            </ul>
         </div>
-        <ul role="list" class="card-grid">
-            <Card
-                title="MQTT Publish / Subscribe"
-                body="Send & receive MQTT messages via topics."
-                iconClass='fa-regular fa-comments'
-            />
-            <Card
-                title="Multiple Connections"
-                body="Connect to multiple MQTT brokers at once."
-                iconClass='fa-solid fa-arrow-up-wide-short'
-            />
-            <Card
-                title="Plugins"
-                body="Explore the community plugin marketplace or write your own custom plugins."
-                iconClass='fa-solid fa-puzzle-piece'
-            />
-            <Card
-                title="Themes"
-                body="Change the look of your favourite MQTT Gui client with custom themes"
-                iconClass='fa-solid fa-palette'
-            />
-        </ul>
-    </div>
-</section>
+    </section>
+</ContentLayout>
 
 <style>
     .card-grid {

@@ -2,42 +2,19 @@
 import Features from '../layouts/Features.astro';
 import Welcome from '../layouts/Welcome.astro';
 import Contributing from '../layouts/Contributing.astro';
-import { Image } from 'astro:assets';
-import ContentLayout from '../layouts/ContentLayout.astro';
-import backgroundImg from '../assets/BackgroundImage.jpg';
 import HorizontalLine from "../components/HorizontalLine.astro";
-
 ---
 
 <!--Main Content -->
 <main>
-	<Image src={backgroundImg} alt="Background image" class="backgroundImg"/>
-    <ContentLayout>
-		<!-- Landing page section -->
-		<Welcome/>
-		<!-- Correo Features -->
-		<div class="content">
-			<Features/>
-			<!-- Correo Contribution -->
+	<!-- Landing page section -->
+	<Welcome/>
 
-			<HorizontalLine/>
+	<Features/>
+	<!-- Correo Contribution -->
 
-			<Contributing/>
-		</div>
-	</ContentLayout>
+	<HorizontalLine/>
+
+	<Contributing/>
+	<!-- Correo Features -->
 </main>
-
-<style>
-	.content {
-		background-color: white;
-		position: relative;
-		z-index: 10;
-	}
-
-	.backgroundImg {
-		width: 100%;
-		position: absolute;
-		z-index: 0;
-		height: 525px;
-	}
-</style>
